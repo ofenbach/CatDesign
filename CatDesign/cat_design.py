@@ -1,3 +1,5 @@
+from nicegui.elements.mixins.text_element import TextElement
+
 color_box = '#1E1E1E'
 color_border = '#323232'
 color_bg = '#0A0B0C'
@@ -12,11 +14,92 @@ def setup(ui):
     ui.colors(primary=color_box)
     ui.colors(secondary=color_border)
 
+    ui.add_head_html('''<style>
+    .txt_field{
+      position: relative;
+      border: 1px solid #323232;
+      background-color: #1E1E1E;
+      border-radius: 8px;
+      margin: 30px 0;
+    }
+    .txt_field input {
+      width: 100%;
+      padding: 0 5px;
+      height: 40px;
+      font-size: 16px;
+      border: none;
+      background: none;
+      outline: none;
+      color: white;
+    }
+    .txt_field label {
+      position: absolute;
+      top: 50%;
+      left: 5px;
+      color: #adadad;
+      transform: translateY(-50%);
+      font-size: 16px;
+      pointer-events: none;
+      transition: .5s;
+    }
+    .txt_field span::before{
+      content: '';
+      position: absolute;
+      top: 40px;
+      left: 0;
+      width: 0%;
+      height: 2px;
+      background: red;
+      transition: .3s;
+
+    }
+    .txt_field input:focus ~ label,
+    .txt_field input:valid ~ label{
+      top: -10px;
+      color: white;
+    }
+    .txt_field input:focus ~ span::before,
+    .txt_field input:valid ~ span::before{
+      width: 100%;
+    }
+    </style>
+     ''')
+
+
+def top_bar(ui, logo_svg="", logo_name="Logo"):
+
+    with ui.element('div').classes('flex justify-between w-full p-4').style(f'background-color: {color_box}'):
+
+        with ui.element('div').classes('flex items-center'):
+            ui.icon('store').classes('text-white text-5xl mr-4')
+            ui.label(logo_name).classes('text-white text-2xl')
+        with ui.element('div').classes('flex items-center').style('border-bottom: 1px solid red;'):
+            ui.label('Search').classes('text-white mr-4')
+            ui.icon("search").style('color: white;')
+        with ui.element('div').classes('flex items-center'):
+            ui.link('Link', 'https://github.com/zauberzeug/nicegui').style('text-decoration: none; color: white; '
+                                                                           'margin-right: 32px;')
+            ui.link('Link', 'https://github.com/zauberzeug/nicegui').style('text-decoration: none; color: white; '
+                                                                           'margin-right: 32px;')
+            ui.link('Link', 'https://github.com/zauberzeug/nicegui').style('text-decoration: none; color: white; '
+                                                                           'margin-right: 32px;')
+            ui.link('Link', 'https://github.com/zauberzeug/nicegui').style('text-decoration: none; color: white; '
+                                                                           'margin-right: 32px;')
 
 # todo: border color to secondary, input font color white
 def textfield(ui, placeholder="Placeholder"):
-    ui.input().props(f'dark borderless v-model="text" label-color="white" label={placeholder}')
+    with ui.element('div').classes('txt_field'):
+        ui.element('input').props('type="text", required')
+        ui.element('span')
+        ui.element('label')
+        TextElement(tag='label', text='Username')
 
+
+def notification(ui, header_message="Meow-tification", message="Time to refill the food bowl, hooman!", color="#6CCAFF"):
+
+    with ui.element('div').style(f'padding-top: 16px; padding-bottom: 16px; padding-left: 32px; padding-right: 32px; background-color: {color_box}; border: 1px solid {color_border}; border-left: 8px solid {color}; border-radius: 8px;'):
+        ui.label(header_message).style('font-size: 20px; color: white; margin-bottom: 16px;')
+        ui.label(message).style('font-size: 16px; color: #A6A6A6;')
 
 def divider(ui):
     with ui.row().classes('w-full mt-8 mb-8'):
