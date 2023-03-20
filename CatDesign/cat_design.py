@@ -12,7 +12,6 @@ body {
     border: 1px solid #323232;
     background-color: #1E1E1E;
     border-radius: 8px;
-    margin: 30px 0;
 }
 .txt_field input {
       width: 100%;
@@ -68,15 +67,19 @@ p1 = 'font-size: 20px; font-weight: 300; color: #A6A6A6;'
 p2 = 'font-size: 16px; font-weight: 300; color: #A6A6A6;'
 p3 = 'font-size: 12px; font-weight: 300; color: #A6A6A6;'
 
+ui = ""
 
-def setup(ui):
+
+def setup(ui_):
+    global ui
+    ui = ui_
     """ defines colors, adds font etc """
     ui.add_head_html(f'<style>{style}</style>')
     ui.colors(primary=color_box)
     ui.colors(secondary=color_border)
 
 
-def typography_examples(ui):
+def typography_examples():
     with ui.element('div').classes('w-full p-12 flex justify-center'):
         with ui.element('div').classes('justify-center mr-12'):
             typography(ui, "H1 - XL Heading", variant="h1")
@@ -128,12 +131,12 @@ def top_bar(ui, logo_svg="", logo_name="Logo"):
 
 
 # todo: border color to secondary, input font color white
-def textfield(ui, placeholder="Placeholder"):
-    with ui.element('div').classes('txt_field'):
+def textfield(ui, placeholder="Placeholder", style=""):
+    with ui.element('div').classes('txt_field').style(style):
         ui.element('input').props('type="text", required')
         ui.element('span')
         ui.element('label')
-        TextElement(tag='label', text='Username')
+        TextElement(tag='label', text=placeholder)
 
 
 def notification(ui, header_message="Meow-tification", message="Time to refill the food bowl, hooman!",
@@ -144,7 +147,7 @@ def notification(ui, header_message="Meow-tification", message="Time to refill t
         ui.label(message).style('font-size: 16px; color: #A6A6A6;')
 
 
-def divider(ui):
+def divider():
     with ui.row().classes('w-full mt-8 mb-8'):
         ui.element('div').classes('w-full h-px').style(f'background-color: {color_border}')
 
@@ -155,7 +158,7 @@ def card(ui, header="Heading", subheader="Subheading"):
         with ui.row():
             ui.image('images/cat_card.png').classes('rounded-2 w-80 h-44')
 
-        divider(ui)
+        divider()
 
         with ui.row():
             ui.label(header).classes('text-white text-xl')
@@ -165,15 +168,14 @@ def card(ui, header="Heading", subheader="Subheading"):
 
 
 def horizontal_card(ui, header="Heading", subheader="Subheading"):
-    with ui.element('div').classes('flex w-full justify-between').style(f'background-color: {color_box}; border: 1px solid {color_border}; box-shadow: '
-                                 'none; color: white; padding: 24px; border-radius: 8px;'):
-
+    with ui.element('div').classes('flex w-full justify-between').style(
+            f'background-color: {color_box}; border: 1px solid {color_border}; box-shadow: '
+            'none; color: white; padding: 24px; border-radius: 8px;'):
         with ui.element('div').style('width: 45%'):
             ui.image('images/cat_card.png').classes('rounded-2 w-80 h-44')
         with ui.element('div').style('width: 50%'):
             typography(ui, header, variant="h3")
             typography(ui, subheader, variant="p2")
-
 
 
 def status(ui, type="green", message="Everything is fine!"):
@@ -258,3 +260,46 @@ def tweet_card(ui, profile_src, profile_name="Profile Name", tweet="Tweet!", ret
                     f'border: 1px solid {color_border}; box-shadow: none; background-color: {color_box};'):
                 ui.label("Show all").classes('mr-4 text-xs text-white')
                 ui.icon('expand_more').classes('text-white')
+
+
+def div():
+    return ui.element('div')
+
+
+def newsletter():
+    with div().classes('flex flex-wrap w-full p-12'):
+        with div().classes('w-full md:w-1/2 md:flex-1'):
+            typography(ui, text="Header Newsletter", variant="p1")
+            typography(ui, text="SubHeader Newsletter", variant="p1")
+
+        with div().classes('w-full md:w-1/2 md:flex-1 mt-4 md:mt-0'):
+            textfield(ui, "email")
+            textfield(ui, "name", style="margin-top: 32px;")
+
+
+def footer():
+
+    with div().style(f'width: 100%; background-color: {color_box}; padding-top: 64px; padding-bottom: 64px; padding-left: 128px; padding-right: 128px;'):
+
+        with div().classes('flex w-full justify-between items-center'):
+            with ui.element('div').classes('flex items-center'):
+                ui.icon('store').classes('text-white text-5xl mr-4')
+                ui.label("logo").classes('text-white text-2xl')
+            with ui.element('div').classes('items-center'):
+                ui.link('Link', 'https://github.com/zauberzeug/nicegui').style('text-decoration: none; color: white; '
+                                                                               'margin-right: 32px;')
+                ui.link('Link', 'https://github.com/zauberzeug/nicegui').style('text-decoration: none; color: white; '
+                                                                               'margin-right: 32px;')
+                ui.link('Link', 'https://github.com/zauberzeug/nicegui').style('text-decoration: none; color: white; '
+                                                                               'margin-right: 32px;')
+                ui.link('Link', 'https://github.com/zauberzeug/nicegui').style('text-decoration: none; color: white;')
+
+        divider()
+
+        with div().classes('flex w-full justify-between items-center'):
+            with ui.element('div').classes('flex items-center'):
+                typography(ui, "CatDesign 2023", "h4")
+            with ui.element('div').classes('items-center'):
+                ui.icon('home').classes('text-xl text-white mr-4')
+                ui.icon('home').classes('text-xl text-white mr-4')
+                ui.icon('home').classes('text-xl text-white')
