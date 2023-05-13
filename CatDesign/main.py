@@ -1,6 +1,7 @@
 from nicegui import ui, app
 from pathlib import Path
 
+from CatDesign.components.div import div
 from CatDesign.components.notification import notification
 from CatDesign.components.tweet_card import tweet_card
 from components.card import card
@@ -15,6 +16,7 @@ from components.typography import typography
 from styles.colors import Colors
 from styles.fonts import FontScheme
 
+# loading basic styles
 head_style = """
 @import url('https://fonts.googleapis.com/css?family=Poppins&display=swap');
 body {
@@ -27,8 +29,6 @@ body {
 def main():
     """
     The main function to initiate the UI.
-
-    This function creates a label in the UI and runs the UI loop.
     """
 
     # cat design setup
@@ -37,9 +37,9 @@ def main():
     ui.add_head_html(f'<style>{head_style}</style>')
 
     # status
-    status(ui)
-    status(ui, type="yellow")
-    status(ui, type="red")
+    status(ui)                                                  # default is green
+    status(ui, type="yellow", message="Custom text message")    # custom message param
+    status(ui, type="red")                                      # every state has its own default message if param empty
 
     # typography
     with box(ui, color_scheme):
@@ -56,16 +56,17 @@ def main():
     tweet_card(ui, color_scheme, profile_src="./images/cat0.png")
     divider(ui)
 
-    with ui.element('div').classes('flex flex-wrap w-full justify-between'):
+    # div with applied tailwind classes
+    with div(ui).classes('flex flex-wrap w-full justify-between'):
         card(ui, font_scheme, color_scheme, "images/cat_card.png", "Hi! I am your cat.", "Feed me or I get angry.")
         card(ui, font_scheme, color_scheme, "images/cat_card2.png", "Hi! I am your cat.", "Feed me or I get angry.")
         card(ui, font_scheme, color_scheme, "images/cat_card3.png", "Hi! I am your cat.", "Feed me or I get angry.")
 
     divider(ui)
+    notification(ui, font_scheme, color_scheme)     # header_message and message param possible (string)
+    divider(ui)
 
-    notification(ui, font_scheme, color_scheme)
-    # start the UI event loop
-    ui.run()
+    ui.run()    # start the UI event loop
 
 
 if __name__ in {"__main__", "__mp_main__"}:
