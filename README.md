@@ -28,6 +28,22 @@ Menu
 Header  
 Footer  
 
+## Getting Started
+
+To get started with CatDesign, you'll need Python 3.7 or later and NiceGUI installed. Install CatDesign using pip:
+
+```bash
+pip install catdesign
+```
+
+Here's an example of how to use CatDesign to create a card:
+```python
+card(ui, font_scheme, color_scheme, "images/cat_card.png", "Hi! I am your cat.", "Feed me or I get angry.")
+```
+
+## License
+CatDesign is under the MIT license. See the LICENSE file for more details.
+
 ## NiceGUI
 CatDesign is a design system tailored for NiceGUI, a web UI framework using Python.
 To learn more about NiceGUI and its capabilities, visit its [GitHub Repository](https://github.com/zauberzeug/nicegui).
