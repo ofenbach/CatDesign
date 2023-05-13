@@ -53,9 +53,9 @@ def main():
     divider(ui)
 
     with ui.element('div').classes('flex flex-wrap w-full justify-between'):
-        card(ui, font_scheme, "images/cat_card.png", "Hi! I am your cat.", "Feed me or I get angry.")
-        card(ui, font_scheme, "images/cat_card2.png", "Hi! I am your cat.", "Feed me or I get angry.")
-        card(ui, font_scheme, "images/cat_card3.png", "Hi! I am your cat.", "Feed me or I get angry.")
+        card(ui, font_scheme, color_scheme, "images/cat_card.png", "Hi! I am your cat.", "Feed me or I get angry.")
+        card(ui, font_scheme, color_scheme, "images/cat_card2.png", "Hi! I am your cat.", "Feed me or I get angry.")
+        card(ui, font_scheme, color_scheme, "images/cat_card3.png", "Hi! I am your cat.", "Feed me or I get angry.")
 
     # start the UI event loop
     ui.run()
