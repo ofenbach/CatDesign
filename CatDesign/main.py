@@ -2,6 +2,7 @@ from nicegui import ui, app
 from pathlib import Path
 
 from CatDesign.components.notification import notification
+from CatDesign.components.tweet_card import tweet_card
 from components.card import card
 
 folder = Path(__file__).resolve().parent / 'images'
@@ -51,6 +52,8 @@ def main():
         typography(ui, font_scheme, text="p3", variant="p3")
         typography(ui, font_scheme, text="caption", variant="caption")
 
+    divider(ui)
+    tweet_card(ui, color_scheme, profile_src="./images/cat0.png")
     divider(ui)
 
     with ui.element('div').classes('flex flex-wrap w-full justify-between'):
