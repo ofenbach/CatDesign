@@ -40,9 +40,9 @@ class FontScheme:
         self.h4 = "font-family: {}; font-size: {}; font-weight: {}; color: {}".format(self.primary_font, '1em', 'bold', 'white')
 
         # Body text
-        self.p1 = "font-family: {}; font-size: {}; font-weight: {};".format(self.primary_font, '1em', 'normal')
-        self.p2 = "font-family: {}; font-size: {}; font-weight: {};".format(self.primary_font, '0.875em', 'normal')
-        self.p3 = "font-family: {}; font-size: {}; font-weight: {};".format(self.secondary_font, '0.75em', 'normal')
+        self.p1 = "font-family: {}; font-size: {}; font-weight: {}; color: {}".format(self.primary_font, '1em', 'normal', 'white')
+        self.p2 = "font-family: {}; font-size: {}; font-weight: {}; color: {}".format(self.primary_font, '0.875em', 'normal', 'white')
+        self.p3 = "font-family: {}; font-size: {}; font-weight: {}; color: {}".format(self.secondary_font, '0.75em', 'normal', 'white')
 
         # Caption
         self.caption = "font-family: {}; font-size: {}; font-weight: {};".format(self.secondary_font, '0.75em', 'light')
