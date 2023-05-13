@@ -36,7 +36,7 @@ class Colors:
         self.secondary = '#607D8B'
         self.success = '#4CAF50'
         self.info = '#2196F3'
-        self.warning = '#FFC107'
+        self.warning = '#FEFF86'
         self.danger = '#F44336'
         self.background = '#212121'
         self.text = '#E0E0E0'

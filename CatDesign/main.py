@@ -1,19 +1,21 @@
 from nicegui import ui, app
 from pathlib import Path
 
-from CatDesign.components.chip import chip
-from CatDesign.components.div import div
-from CatDesign.components.notification import notification
-from CatDesign.components.tweet_card import tweet_card
-from components.card import card
+from CatDesign.components.basics.chip import chip
+from CatDesign.components.basics.rating import rating
+from CatDesign.components.feedback.alert import alert
+from CatDesign.components.layout.div import div
+from CatDesign.components.custom.notification import notification
+from CatDesign.components.custom.tweet_card import tweet_card
+from CatDesign.components.custom.card import card
 
 folder = Path(__file__).resolve().parent / 'images'
 app.add_static_files('/images', folder)  # serve all files in this folder
 
-from components.box import box
-from components.divider import divider
-from components.status import status
-from components.typography import typography
+from CatDesign.components.layout.box import box
+from CatDesign.components.basics.divider import divider
+from CatDesign.components.feedback.status import status
+from CatDesign.components.basics.typography import typography
 from styles.colors import Colors
 from styles.fonts import FontScheme
 
@@ -37,12 +39,8 @@ def main():
     font_scheme = FontScheme()
     ui.add_head_html(f'<style>{head_style}</style>')
 
-    # status
-    status(ui)                                                  # default is green
-    status(ui, type="yellow", message="Custom text message")    # custom message param
-    status(ui, type="red")                                      # every state has its own default message if param empty
-
     # typography
+    typography(ui, font_scheme, text="Typography (in a box)", variant="h1")
     with box(ui, color_scheme):
         typography(ui, font_scheme, text="H1 Heading", variant="h1")
         typography(ui, font_scheme, text="H2 Heading", variant="h2")
@@ -53,22 +51,53 @@ def main():
         typography(ui, font_scheme, text="p3", variant="p3")
         typography(ui, font_scheme, text="caption", variant="caption")
 
+    # tweet card
     divider(ui)
+    typography(ui, font_scheme, text="Tweet card", variant="h1")
     tweet_card(ui, color_scheme, profile_src="./images/cat0.png")
     divider(ui)
 
-    # div with applied tailwind classes
+    # card
+    typography(ui, font_scheme, text="Card", variant="h1")
     with div(ui).classes('flex flex-wrap w-full justify-between'):
         card(ui, font_scheme, color_scheme, "images/cat_card.png", "Hi! I am your cat.", "Feed me or I get angry.")
         card(ui, font_scheme, color_scheme, "images/cat_card2.png", "Hi! I am your cat.", "Feed me or I get angry.")
         card(ui, font_scheme, color_scheme, "images/cat_card3.png", "Hi! I am your cat.", "Feed me or I get angry.")
-
-    divider(ui)
-    notification(ui, font_scheme, color_scheme)     # header_message and message param possible (string)
     divider(ui)
 
-    chip(ui, font_scheme, color_scheme)
-    chip(ui, font_scheme, color_scheme, variant="outlined")
+    # notification
+    typography(ui, font_scheme, text="Notification", variant="h1")
+    with div(ui).classes('flex flex-wrap w-full justify-between'):
+        notification(ui, font_scheme, color_scheme)     # header_message and message param possible (string)
+        notification(ui, font_scheme, color_scheme)
+        notification(ui, font_scheme, color_scheme)
+    divider(ui)
+
+    typography(ui, font_scheme, text="Chip", variant="h1")
+    with div(ui).classes('flex flex-wrap w-80 justify-between'):
+        chip(ui, font_scheme, color_scheme)
+        chip(ui, font_scheme, color_scheme, variant="outlined")
+    divider(ui)
+
+    typography(ui, font_scheme, text="Rating", variant="h1")
+    rating(ui, color_scheme, stars=4)
+    divider(ui)
+
+    typography(ui, font_scheme, text="Alerts", variant="h1")
+    with div(ui).classes('flex flex-wrap w-full justify-between'):
+        alert(ui, type="info", message="This is an info alert — check it out!")
+        alert(ui, type="warning", message="This is a warning alert — check it out!")
+        alert(ui, type="error", message="Please enter correct e-mail")
+        alert(ui, type="success")
+    divider(ui)
+
+    # status
+    typography(ui, font_scheme, text="Status", variant="h1")
+    with div(ui).classes('flex flex-wrap w-full justify-between'):
+        status(ui)                                                  # default is green
+        status(ui, type="yellow", message="Custom text message")    # custom message param
+        status(ui, type="red")                                      # every state has its own default message if param empty
+    divider(ui)
 
     ui.run()    # start the UI event loop
 

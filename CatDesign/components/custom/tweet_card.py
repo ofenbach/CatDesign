@@ -1,4 +1,4 @@
-from CatDesign.components.avatar import avatar
+from CatDesign.components.basics.avatar import avatar
 
 
 def tweet_card(ui, color_scheme, profile_src, profile_name="Profile Name", tweet="Tweet!", retweet="Retweet!"):

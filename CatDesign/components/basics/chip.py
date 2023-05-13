@@ -1,5 +1,5 @@
-from CatDesign.components.box import box
-from CatDesign.components.typography import typography
+from CatDesign.components.layout.box import box
+from CatDesign.components.basics.typography import typography
 
 
 def chip(ui, font_scheme, color_scheme, variant="filled", text="Chip"):

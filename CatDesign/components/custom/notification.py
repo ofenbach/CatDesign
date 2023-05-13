@@ -1,4 +1,4 @@
-from CatDesign.components.typography import typography
+from CatDesign.components.basics.typography import typography
 
 
 def notification(ui, font_scheme, color_scheme, header_message="Meow-tification", message="Time to refill the food bowl, hooman!",
