@@ -1,6 +1,7 @@
 from nicegui import ui, app
 from pathlib import Path
 
+from CatDesign.components.chip import chip
 from CatDesign.components.div import div
 from CatDesign.components.notification import notification
 from CatDesign.components.tweet_card import tweet_card
@@ -65,6 +66,9 @@ def main():
     divider(ui)
     notification(ui, font_scheme, color_scheme)     # header_message and message param possible (string)
     divider(ui)
+
+    chip(ui, font_scheme, color_scheme)
+    chip(ui, font_scheme, color_scheme, variant="outlined")
 
     ui.run()    # start the UI event loop
 
