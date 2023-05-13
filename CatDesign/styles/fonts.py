@@ -30,8 +30,8 @@ class FontScheme:
 
     def __init__(self):
         """Constructs all the necessary attributes for the typography scheme object."""
-        self.primary_font = 'Poppins, sans-serif'
-        self.secondary_font = 'Roboto, sans-serif'
+        self.primary_font = 'Poppins'
+        self.secondary_font = 'Roboto'
 
         # Headers
         self.h1 = "font-family: {}; font-size: {}; font-weight: {}; color: {}".format(self.primary_font, '2em', 'bold', 'white')
@@ -42,7 +42,7 @@ class FontScheme:
         # Body text
         self.p1 = "font-family: {}; font-size: {}; font-weight: {}; color: {}".format(self.primary_font, '1em', 'normal', 'white')
         self.p2 = "font-family: {}; font-size: {}; font-weight: {}; color: {}".format(self.primary_font, '0.875em', 'normal', 'white')
-        self.p3 = "font-family: {}; font-size: {}; font-weight: {}; color: {}".format(self.secondary_font, '0.75em', 'normal', 'white')
+        self.p3 = "font-family: {}; font-size: {}; font-weight: {}; color: {}".format(self.primary_font, '0.75em', 'normal', 'white')
 
         # Caption
-        self.caption = "font-family: {}; font-size: {}; font-weight: {};".format(self.secondary_font, '0.75em', 'light')
+        self.caption = "font-family: {}; font-size: {}; font-weight: {};".format(self.primary_font, '0.75em', 'light')

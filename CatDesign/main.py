@@ -1,6 +1,7 @@
 from nicegui import ui, app
 from pathlib import Path
 
+from CatDesign.components.notification import notification
 from components.card import card
 
 folder = Path(__file__).resolve().parent / 'images'
@@ -16,7 +17,7 @@ from styles.fonts import FontScheme
 head_style = """
 @import url('https://fonts.googleapis.com/css?family=Poppins&display=swap');
 body {
-    font-family: 'Poppins', sans-serif;
+    font-family: 'Poppins';
     background-color: #0A0B0C;
     margin: 0;
 }
@@ -57,6 +58,9 @@ def main():
         card(ui, font_scheme, color_scheme, "images/cat_card2.png", "Hi! I am your cat.", "Feed me or I get angry.")
         card(ui, font_scheme, color_scheme, "images/cat_card3.png", "Hi! I am your cat.", "Feed me or I get angry.")
 
+    divider(ui)
+
+    notification(ui, font_scheme, color_scheme)
     # start the UI event loop
     ui.run()
 
