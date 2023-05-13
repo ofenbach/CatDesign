@@ -14,7 +14,7 @@ def card(ui, font_scheme, color_scheme, img_src="", header="Heading", sub_header
                 .card:hover {{
                     transition: 0.3s;
                     box-shadow: 0px 0px 24px rgba(255,255,255,0.06);
-                    border: 0px;
+                    border: 1px solid rgba(0,0,0,0);
                 }}
                 .image_card_hover {{
                     transition: 0.3s;
