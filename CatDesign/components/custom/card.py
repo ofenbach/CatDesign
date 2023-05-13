@@ -2,7 +2,7 @@ from CatDesign.components.basics.divider import divider
 from CatDesign.components.basics.typography import typography
 
 
-def card(ui, font_scheme, color_scheme, img_src="", header="Heading", sub_header="Subheading"):
+def card(ui, font_scheme, color_scheme, img_src="", header="Heading", sub_header="Subheading", css="", tailwind=""):
     style = f"""
                 .card {{
                     padding: 24px;
@@ -37,6 +37,6 @@ def card(ui, font_scheme, color_scheme, img_src="", header="Heading", sub_header
             typography(ui, font_scheme, header, "h4")
 
         with ui.row().classes('mt-4'):
-            typography(ui, font_scheme, sub_header, "p2")
+            typography(ui, font_scheme, sub_header, "body1")
 
 

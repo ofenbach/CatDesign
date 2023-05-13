@@ -29,6 +29,37 @@ def main():
         cat.typography(text="Body 2", variant="body2")
 
     cat.divider()
+    cat.card()
+    cat.divider()
+
+    cat.typography(text="Notification", variant="h1")
+    with cat.div(tailwind='flex flex-wrap w-full justify-between'):
+        cat.notification()     # header_message and message param possible (string)
+        cat.notification()
+        cat.notification()
+
+    cat.divider()
+
+    cat.typography(text="Chip", variant="h1")
+    with cat.div(tailwind='flex flex-wrap w-full'):
+        cat.chip(variant="outlined")
+        cat.chip(variant="filled", css='margin-left: 64px;')
+
+    cat.divider()
+    cat.typography(text="Rating", variant="h1")
+    cat.rating()
+    cat.divider()
+
+    cat.typography(text="Alerts", variant="h1")
+    with cat.div(tailwind='flex flex-wrap w-full justify-between'):
+        cat.alert(type="info", message="This is an info alert — check it out!")
+        cat.alert(type="warning", message="This is a warning alert — check it out!")
+        cat.alert(type="error", message="Please enter correct e-mail")
+        cat.alert(type="success")
+    cat.divider()
+
+
+
 
 
 if __name__ in {"__main__", "__mp_main__"}:
