@@ -1,4 +1,7 @@
-def alert(ui, type="success", message="Operation successful!"):
+from CatDesign.components.layout.div import div
+
+
+def alert(ui, type="success", message="Operation successful!", css='', tailwind=''):
     """
     :param message: message to appear in the alert
     :param type: success, info, warning, error
@@ -12,29 +15,24 @@ def alert(ui, type="success", message="Operation successful!"):
     color_lightgreen = '#E8F7E5'
     color_green = '#3CBE2F'
 
-    def div():
-        """Create a div element."""
-        return ui.element('div')
-
     match type:
         case "success":
-            with ui.element('button').style(
-                    f'border-radius: 2px; background-color: {color_lightgreen};'
-                    f' display: flex; align-items: center; padding: 8px 16px;'):
+            with div(ui, css=f'border-radius: 2px; background-color: {color_lightgreen};'
+                    f' display: flex; align-items: center; padding: 8px 16px;'+css, tailwind=tailwind):
                 ui.icon('task_alt').classes('text-3xl').style(f'color: {color_green}; margin-right: 0.5em;')
                 ui.label(message).style(f'color: {color_green};')
         case "info":
-            with ui.element('button').style(
-                    f'border-radius: 2px; background-color: {color_lightblue}; display: flex; align-items: center; padding: 8px 16px;'):
+            with div(ui, css=f'border-radius: 2px; background-color: {color_lightblue};'
+                             f' display: flex; align-items: center; padding: 8px 16px;' + css, tailwind=tailwind):
                 ui.icon('info').classes('text-3xl').style(f'color: {color_blue}; margin-right: 0.5em;')
                 ui.label(message).style(f'color: {color_blue};')
         case "warning":
-            with ui.element('button').style(
-                    f'border-radius: 2px; background-color: {color_lightyellow}; display: flex; align-items: center; padding: 8px 16px;'):
+            with div(ui, css=f'border-radius: 2px; background-color: {color_lightyellow};'
+                             f' display: flex; align-items: center; padding: 8px 16px;' + css, tailwind=tailwind):
                 ui.icon('warning_amber').classes('text-3xl').style(f'color: {color_yellow}; margin-right: 0.5em;')
                 ui.label(message).style(f'color: {color_yellow};')
         case "error":
-            with ui.element('button').style(
-                    f'border-radius: 2px; background-color: {color_lightred}; display: flex; align-items: center; padding: 8px 16px;'):
+            with div(ui, css=f'border-radius: 2px; background-color: {color_lightred};'
+                             f' display: flex; align-items: center; padding: 8px 16px;' + css, tailwind=tailwind):
                 ui.icon('report_gmailerrorred').classes('text-3xl').style(f'color: {color_red}; margin-right: 0.5em;')
                 ui.label(message).style(f'color: {color_red};')

@@ -48,7 +48,7 @@ class CatDesign:
     def card(self, img_src='./images/cat_card.png', header='Header', sub_header='Subheader', css='', tailwind=''):
         card(self.ui, self.font_scheme, self.color_scheme, img_src, header, sub_header, css, tailwind)
 
-    def notification(self, header="Meow-tification", sub_header="Time to refill the food bowl, hooman!", css='', tailwind=''):
+    def notification(self, header='Meow-tification', sub_header='Time to refill the food bowl, hooman!', css='', tailwind=''):
         notification(ui, self.font_scheme, self.color_scheme, header, sub_header, css, tailwind)
 
     def chip(self, variant='filled', css='', tailwind=''):
@@ -57,5 +57,5 @@ class CatDesign:
     def rating(self, stars=4, css='', tailwind=''):
         rating(self.ui, self.color_scheme, stars, css, tailwind)
 
-    def alert(self, type='success', message='Success'):
-        alert(self.ui, type, message)   # todo: use font scheme + color scheme
+    def alert(self, type='success', message='Success', css='', tailwind=''):
+        alert(self.ui, type, message, css, tailwind)   # todo: use font scheme + color scheme
