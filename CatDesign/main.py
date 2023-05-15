@@ -20,7 +20,7 @@ def main():
         with cat.div(tailwind='flex w-full justify-center'):
             cat.typography(text='Typography (in a box)', variant='h1', css='margin-top: 2em;', tailwind='ml-8')
 
-        with cat.div(tailwind='flex w-full justify-center'):
+        with cat.div(tailwind='flex w-full justify-center mt-8'):
             with cat.box():
                 cat.typography(text='H1 Heading', variant='h1')
                 cat.typography(text='H2 Heading', variant='h2')
@@ -36,14 +36,14 @@ def main():
         cat.divider()
         with cat.div(tailwind='flex w-full justify-center'):
             cat.typography(text='Card', variant='h1')
-        with cat.div(tailwind='flex w-full justify-center'):
+        with cat.div(tailwind='flex w-full justify-center mt-8'):
             cat.card()
         cat.divider()
 
         # notification
         with cat.div(tailwind='flex w-full justify-center'):
             cat.typography(text='Notification', variant='h1')
-        with cat.div(tailwind='flex w-full justify-center'):
+        with cat.div(tailwind='flex w-full justify-center mt-8'):
             cat.notification()     # header_message and message param possible (string)
 
         cat.divider()
@@ -51,7 +51,7 @@ def main():
         # chip
         with cat.div(tailwind='flex w-full justify-center'):
             cat.typography(text='Chip', variant='h1')
-        with cat.div(tailwind='flex w-full justify-center'):
+        with cat.div(tailwind='flex w-full justify-center mt-4'):
             cat.typography(text="Chips are compact elements that represent an input, attribute, or action.",
                            variant='body1')
         with cat.div(tailwind='flex w-full justify-center mt-8'):
@@ -64,7 +64,7 @@ def main():
         # rating
         with cat.div(tailwind='flex w-full justify-center'):
             cat.typography(text='Rating', variant='h1')
-        with cat.div(tailwind='flex w-full justify-center'):
+        with cat.div(tailwind='flex w-full justify-center mt-4'):
             cat.typography(text="Ratings provide insight regarding others' opinions and experiences, and can allow the user to submit a rating of their own.",
                            variant='body1')
 
@@ -77,7 +77,7 @@ def main():
         with cat.div(tailwind='flex w-full justify-center'):
             cat.typography(text='Alerts', variant='h1')
 
-        with cat.div(tailwind='flex w-full justify-center'):
+        with cat.div(tailwind='flex w-full justify-center mt-4'):
             cat.typography(text="An alert displays a short, important message in a way that attracts the user's attention without interrupting the user's task.",
                            variant='body1')
         with cat.div(tailwind='flex flex-wrap w-full justify-between mt-8'):
@@ -92,7 +92,7 @@ def main():
         with cat.div(tailwind='flex w-full justify-center'):
             cat.typography(text='Icons', variant='h1')
 
-        with cat.div(tailwind='flex w-full justify-center'):
+        with cat.div(tailwind='flex w-full justify-center mt-4'):
             cat.typography(text='To incorporate icons, invoke the "icon" method, specifying the name of the icon as well as'
                                 'your preferred style variant. The icon names correspond to those found on the Heroicons'
                                 'website (https://heroicons.com/).', variant='body1')
@@ -108,7 +108,7 @@ def main():
         cat.icon('share', color='red')
         cat.typography(text="This will create a 'share' icon in red color.", variant='body2')"""
 
-        with cat.div(tailwind='flex justify-between w-full mt-8'):
+        with cat.div(tailwind='flex justify-between w-full mt-16'):
             cat.icon('share')
             cat.icon('like')
             cat.icon('star')
@@ -119,7 +119,7 @@ def main():
             cat.icon('chevron-left')
             cat.icon('chevron-right')
 
-        with cat.div(tailwind='flex justify-between w-full mt-4'):
+        with cat.div(tailwind='flex justify-between w-full mt-16 mb-16'):
             cat.icon('cloud')
             cat.icon('minus-circle')
             cat.icon('ellipsis')
