@@ -56,7 +56,11 @@ def main():
         with cat.div(tailwind='flex w-full justify-center'):
             cat.typography(text='Notification', variant='h1')
         with cat.div(tailwind='flex w-full justify-center mt-8'):
-            cat.notification()     # header_message and message param possible (string)
+            cat.notification()     # header and sub_header param possible (string)
+            cat.notification(header="Cat Food Recall",
+                             sub_header="Brand X has issued a recall for their tuna flavored cat food.", tailwind='mr-8 ml-8')
+            cat.notification(header="Vet Appointment Reminder",
+                             sub_header="Don't forget your cat's annual check-up appointment next week.", tailwind='mt-8')
 
         cat.divider()
 
