@@ -6,6 +6,7 @@ from CatDesign.components.basics.rating import rating
 from CatDesign.components.basics.typography import typography
 from CatDesign.components.custom.card import card
 from CatDesign.components.custom.notification import notification
+from CatDesign.components.custom.tweet_card import tweet_card
 from CatDesign.components.feedback.alert import alert
 from CatDesign.components.layout.box import box
 from CatDesign.components.layout.div import div
@@ -59,3 +60,6 @@ class CatDesign:
 
     def alert(self, type='success', message='Success', css='', tailwind=''):
         alert(self.ui, type, message, css, tailwind)   # todo: use font scheme + color scheme
+
+    def tweet_card(self):
+        tweet_card(self.ui, self.color_scheme, profile_src='./images/cat0.png')

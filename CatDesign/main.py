@@ -2,6 +2,7 @@ from nicegui import app
 from pathlib import Path
 
 from CatDesign.cat_design import CatDesign
+from CatDesign.components.custom.tweet_card import tweet_card
 
 folder = Path(__file__).resolve().parent / 'images'
 app.add_static_files('/images', folder)  # serve all files in this folder
@@ -57,6 +58,8 @@ def main():
         cat.alert(type='error', message='Please enter correct e-mail')
         cat.alert(type='success',  css="border-radius: 100px;", tailwind='mr-8')        # css and tailwind works
     cat.divider()
+
+    cat.tweet_card()
 
 
 if __name__ in {'__main__', '__mp_main__'}:
