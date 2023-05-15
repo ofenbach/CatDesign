@@ -1,6 +1,6 @@
 import os
 
-from nicegui import ui, app
+from nicegui import ui
 
 from CatDesign.components.basics.avatar import avatar
 from CatDesign.components.basics.chip import chip

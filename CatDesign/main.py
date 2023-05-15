@@ -2,7 +2,6 @@ from nicegui import app
 from pathlib import Path
 
 from CatDesign.cat_design import CatDesign
-from CatDesign.components.custom.tweet_card import tweet_card
 
 folder = Path(__file__).resolve().parent / 'images'
 app.add_static_files('/images', folder)  # serve all files in this folder
@@ -74,7 +73,7 @@ def main():
 
 
     cat.typography('List of all icons:')
-    with cat.div(tailwind='flex'):
+    with cat.div(tailwind='flex justify-between w-full'):
         cat.icon('share')
         cat.icon('like')
         cat.icon('star')
@@ -84,6 +83,17 @@ def main():
         cat.icon('bell')
         cat.icon('chevron-left')
         cat.icon('chevron-right')
+
+    with cat.div(tailwind='flex justify-between w-full mt-4'):
+        cat.icon('cloud')
+        cat.icon('minus-circle')
+        cat.icon('ellipsis')
+        cat.icon('envelope')
+        cat.icon('envelope-open')
+        cat.icon('trash')
+        cat.icon('map')
+        cat.icon('map-pin')
+        cat.icon('hand-thumb-up')
 
     cat.divider()
 
