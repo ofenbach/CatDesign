@@ -1,5 +1,6 @@
 from CatDesign.components.basics.divider import divider
 from CatDesign.components.basics.typography import typography
+from CatDesign.components.layout.div import div
 
 
 def card(ui, font_scheme, color_scheme, img_src="", header="Heading", sub_header="Subheading", css="", tailwind=""):
@@ -27,16 +28,18 @@ def card(ui, font_scheme, color_scheme, img_src="", header="Heading", sub_header
                 """
     ui.add_head_html(f'<style>{style}</style>')
 
-    with ui.element('div').classes('card'):
-        with ui.row().classes('image_card_hover'):
-            ui.image(img_src).classes('rounded-2 w-80 h-44')
+    with div(ui, css=css, tailwind=tailwind):
+        with ui.element('div').classes('card'):
 
-        divider(ui)
+            with ui.row().classes('image_card_hover'):
+                ui.image(img_src).classes('rounded-2 w-80 h-44')
 
-        with ui.row():
-            typography(ui, font_scheme, header, "h4")
+            divider(ui)
 
-        with ui.row().classes('mt-4'):
-            typography(ui, font_scheme, sub_header, "body1")
+            with ui.row():
+                typography(ui, font_scheme, header, "h4")
+
+            with ui.row().classes('mt-4'):
+                typography(ui, font_scheme, sub_header, "body1")
 
 
