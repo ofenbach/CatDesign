@@ -80,6 +80,10 @@ def main():
         cat.icon('star')
         cat.icon('settings')
         cat.icon('hamburger')
+        cat.icon('refresh')
+        cat.icon('bell')
+        cat.icon('chevron-left')
+        cat.icon('chevron-right')
 
     cat.divider()
 
