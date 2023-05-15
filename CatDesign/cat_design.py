@@ -39,7 +39,7 @@ class CatDesign:
     def div(self, css='', tailwind=''):
         return div(self.ui, css, tailwind)
 
-    def typography(self, text='', variant='', css='', tailwind=''):
+    def typography(self, text='', variant='h1', css='', tailwind=''):
         typography(self.ui, self.font_scheme, text, variant, css, tailwind)
 
     def box(self, css='', tailwind=''):
@@ -72,7 +72,7 @@ class CatDesign:
         icon_file_name = f'{icon_name}_{variant}.svg'
 
         # adjust path to the icon file
-        icon_path = os.path.join('components', 'icons', variant, icon_file_name)
+        icon_path = os.path.join('components', 'icons', icon_name, icon_file_name)
 
         try:
             with open(icon_path, 'r') as file:

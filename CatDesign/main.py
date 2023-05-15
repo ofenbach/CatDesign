@@ -59,10 +59,32 @@ def main():
         cat.alert(type='success',  css="border-radius: 100px;", tailwind='mr-8')        # css and tailwind works
     cat.divider()
 
-    cat.tweet_card(profile_src='./images/cat0.png')
-
+    cat.typography(text='Icons', variant='h1')
+    cat.typography(text='To use icons, use the icon method with the name of the icon and the desired variant.', variant='body1')
+    cat.typography(text='If no variant is specified, the default is "outlined".', variant='body1')
+    cat.typography(text='Example:', variant='body2')
+    cat.typography(text="cat.icon('share', variant='filled')", variant='body2')
     cat.icon('share', variant='filled')
+    cat.typography(text="This will create a filled 'share' icon.", variant='body2')
+    cat.typography(text="You can also change the color of the icon.", variant='body2')
+    cat.typography(text="Example:", variant='body2')
+    cat.typography(text="cat.icon('share', color='red')", variant='body2')
     cat.icon('share', color='red')
+    cat.typography(text="This will create a 'share' icon in red color.", variant='body2')
+
+
+    cat.typography('List of all icons:')
+    with cat.div(tailwind='flex'):
+        cat.icon('share')
+        cat.icon('like')
+        cat.icon('star')
+        cat.icon('settings')
+        cat.icon('hamburger')
+
+    cat.divider()
+
+
+    cat.tweet_card(profile_src='./images/cat0.png')
 
 
 if __name__ in {'__main__', '__mp_main__'}:
