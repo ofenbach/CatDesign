@@ -1,12 +1,14 @@
+import os
+
 from nicegui import ui, app
 
+from CatDesign.components.basics.avatar import avatar
 from CatDesign.components.basics.chip import chip
 from CatDesign.components.basics.divider import divider
 from CatDesign.components.basics.rating import rating
 from CatDesign.components.basics.typography import typography
 from CatDesign.components.custom.card import card
 from CatDesign.components.custom.notification import notification
-from CatDesign.components.custom.tweet_card import tweet_card
 from CatDesign.components.feedback.alert import alert
 from CatDesign.components.layout.box import box
 from CatDesign.components.layout.div import div
@@ -61,5 +63,66 @@ class CatDesign:
     def alert(self, type='success', message='Success', css='', tailwind=''):
         alert(self.ui, type, message, css, tailwind)   # todo: use font scheme + color scheme
 
-    def tweet_card(self):
-        tweet_card(self.ui, self.color_scheme, profile_src='./images/cat0.png')
+    def icon(self, icon_name, color='#FFFFFF', variant='outlined', css='', tailwind=''):
+        # validate variant
+        if variant not in ['outlined', 'filled']:
+            raise ValueError(f"Invalid variant '{variant}'. Expected 'outlined' or 'filled'.")
+
+        # adjust icon name based on variant
+        icon_file_name = f'{icon_name}_{variant}.svg'
+
+        # adjust path to the icon file
+        icon_path = os.path.join('components', 'icons', variant, icon_file_name)
+
+        try:
+            with open(icon_path, 'r') as file:
+                svg_content = file.read().replace('currentColor', color)
+            self.ui.html(svg_content).style(css)
+        except FileNotFoundError:
+            print(f"Icon '{icon_name}' not found in the '{variant}' variant.")
+
+    def tweet_card(self, profile_src, profile_name='Profile Name', tweet='Tweet!', tweet_date='23.05.2023', retweet='Retweet!', liked=False):
+
+        with div(ui, css=f'background-color: {self.color_scheme.color_box}; border: 1px solid {self.color_scheme.color_border};'
+                     f'box-shadow: none; color: white; padding: 32px; border-radius: 8px;'):
+
+            # profile avatar
+            with ui.row().classes('flex items-center'):
+                ui.image(profile_src).classes('rounded-full h-8 w-8')
+                self.typography(profile_name, variant='subtitle1')
+
+            # tweet
+            with ui.row().classes('mt-4'):
+                self.typography(tweet, variant='h3')
+
+            # date, share_outlined.svg, like
+            with ui.row().classes('flex justify-between items-center w-full mt-4'):
+                self.typography(tweet_date, variant='subtitle2', css='color: #A6A6A6;')
+                with div(ui, tailwind='flex'):
+                    self.icon('share', css='margin-right: 16px;')
+                    self.icon('like', variant='filled' if liked else 'outlined')
+
+            # divider
+            self.divider()
+
+            # retweet profiles
+            with ui.row().classes('flex justify-between items-center w-full'):
+                with div(ui):
+                    avatar(ui, src='images/cat1.png', style='z-index: 3;')
+                    avatar(ui, src='images/cat2.png', style='margin-left: -16px; z-index: 2;')
+                    avatar(ui, src='images/cat3.png', style='margin-left: -16px; z-index: 1;')
+                    avatar(ui, src='images/cat4.png', style='margin-left: -16px; z-index: 0;')
+
+                with div(ui):
+                    self.typography('Retweets', variant='subtitle2', css='color: white;')
+
+            # retweet
+            with ui.row().classes('flex items-center mt-6'):
+                avatar(ui, src='images/cat5.png')
+                self.typography('Retweeter', variant='subtitle1')
+
+            with ui.row().classes('mt-4'):
+                self.typography(text=retweet, variant='subtitle2')
+
+            with ui.row().classes('w-full mt-8'):
+                ui.button('Show all').props('size=md icon-right=expand_more no-caps outline text-color=white').classes('rounded-full w-full ')

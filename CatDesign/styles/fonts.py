@@ -51,7 +51,7 @@ class FontScheme:
 
         # Subtitles
         self.subtitle1 = "font-family: {}; font-size: {}; font-weight: {}; color: {}".format(self.primary_font, '1em', 'medium', 'white; ')
-        self.subtitle2 = "font-family: {}; font-size: {}; font-weight: {}; color: {}".format(self.primary_font, '0.875em', 'medium', 'white; ')
+        self.subtitle2 = "font-family: {}; font-size: {}; font-weight: {}; color: {}".format(self.primary_font, '0.875em', 'medium', '#D9D9D9; ')
 
         # Body text
         self.body1 = "font-family: {}; font-size: {}; font-weight: {}; color: {}".format(self.primary_font, '1em', 'normal', 'white; ')

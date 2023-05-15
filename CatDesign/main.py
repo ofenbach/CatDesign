@@ -59,7 +59,10 @@ def main():
         cat.alert(type='success',  css="border-radius: 100px;", tailwind='mr-8')        # css and tailwind works
     cat.divider()
 
-    cat.tweet_card()
+    cat.tweet_card(profile_src='./images/cat0.png')
+
+    cat.icon('share', variant='filled')
+    cat.icon('share', color='red')
 
 
 if __name__ in {'__main__', '__mp_main__'}:
