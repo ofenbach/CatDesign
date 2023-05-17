@@ -8,6 +8,7 @@ from CatDesign.components.basics.divider import divider
 from CatDesign.components.basics.rating import rating
 from CatDesign.components.basics.typography import typography
 from CatDesign.components.custom.card import card
+from CatDesign.components.custom.chart import bar_chart
 from CatDesign.components.custom.notification import notification
 from CatDesign.components.feedback.alert import alert
 from CatDesign.components.layout.box import box
@@ -126,3 +127,6 @@ class CatDesign:
 
             with ui.row().classes('w-full mt-8'):
                 ui.button('Show all').props('size=md icon-right=expand_more no-caps outline text-color=white').classes('rounded-full w-full ')
+
+    def bar_chart(self, data=None, labels=None, css='', tailwind=''):
+        bar_chart(self.ui, self.color_scheme, data, labels, css, tailwind)

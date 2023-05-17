@@ -148,6 +148,8 @@ def main():
 
         cat.divider()
 
+    cat.bar_chart()
+
 
     cat.tweet_card(profile_src='./images/cat0.png')
 
