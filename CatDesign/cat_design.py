@@ -8,7 +8,8 @@ from CatDesign.components.basics.divider import divider
 from CatDesign.components.basics.rating import rating
 from CatDesign.components.basics.typography import typography
 from CatDesign.components.custom.card import card
-from CatDesign.components.custom.chart import bar_chart
+from CatDesign.components.custom.bar_chart import bar_chart
+from CatDesign.components.custom.line_chart import line_chart
 from CatDesign.components.custom.notification import notification
 from CatDesign.components.feedback.alert import alert
 from CatDesign.components.layout.box import box
@@ -130,3 +131,6 @@ class CatDesign:
 
     def bar_chart(self, data=None, labels=None, css='', tailwind=''):
         bar_chart(self.ui, self.color_scheme, data, labels, css, tailwind)
+
+    def line_chart(self, data=None, labels=None, css='', tailwind=''):
+        line_chart(self.ui, self.color_scheme, data, labels, css, tailwind)

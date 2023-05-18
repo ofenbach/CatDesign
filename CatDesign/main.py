@@ -150,6 +150,8 @@ def main():
 
     cat.bar_chart()
 
+    cat.line_chart()
+
 
     cat.tweet_card(profile_src='./images/cat0.png')
 
