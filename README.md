@@ -5,6 +5,7 @@ CatDesign is a comprehensive design system built on top of the innovative Python
 Here are some of the components already developed and ready for use in CatDesign:
   
 <img width="374" alt="SCREENSHOT 6" src="https://user-images.githubusercontent.com/29439003/225862437-6fdd18eb-8170-45f7-a8d9-45f545ef448d.png">
+<img width="1433" alt="Bildschirmfoto 2023-05-18 um 15 37 15" src="https://github.com/ofenbach/CatDesign/assets/29439003/c2c66bc6-fc72-486e-836a-f8d0c1c898bb">
 <img width="840" alt="SCREENSHOT 5" src="https://user-images.githubusercontent.com/29439003/225862494-7951ec66-a07e-4493-a213-141635a3e324.png">
 <img width="498" alt="SCREENSHOT 7" src="https://user-images.githubusercontent.com/29439003/225862453-6ca1c98b-c388-435a-83a9-05a8060e4dd2.png">
 <img width="539" alt="SCREENSHOT 4" src="https://user-images.githubusercontent.com/29439003/225862474-8c2b4768-7bcf-4969-9884-b9fc46152770.png">
