@@ -150,7 +150,7 @@ def main():
 
     cat.bar_chart()
 
-    cat.line_chart()
+    cat.line_chart(css='margin-top: 200px; margin-bottom: 200px; width: 80%;', tailwind='ml-16')
 
 
     cat.tweet_card(profile_src='./images/cat0.png')

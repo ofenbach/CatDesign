@@ -7,16 +7,16 @@ def line_chart(ui, color_scheme, data=None, labels=None, css='', tailwind=''):
     """
     # Default values if none provided
     if data is None:
-        data = [[10, 20, 30, 40, 50], [15, 25, 35, 45, 55]]
+        data = [[15, 25, 10, 32, 40, 60, 30, 15, 20,25, 28,26,20]]
     if labels is None:
         labels = ['Label1', 'Label2', 'Label3', 'Label4', 'Label5']
 
     # Assigning a color scheme for the chart to match the CatDesign style
-    color_chart_scheme = ['#1f77b4', '#ff7f0e', '#2ca02c', '#d62728', '#9467bd']
+    color_chart_scheme = ['#6CCAFF']  # CatDesign blue
 
     # Creating the chart options
     chart_options = {
-        'chart': {'type': 'line', 'backgroundColor': 'transparent'},
+        'chart': {'type': 'areaspline', 'backgroundColor': 'transparent'},
         'title': False,
         'xAxis': {'categories': labels, 'labels': {'style': {'color': '#fff'}}},
         'yAxis': {
@@ -28,16 +28,24 @@ def line_chart(ui, color_scheme, data=None, labels=None, css='', tailwind=''):
         'plotOptions': {
             'series': {
                 'marker': {
-                    'enabled': True,
-                    'radius': 5  # Adjust to change marker size
+                    'enabled': False,
+                    'radius': 1  # Adjust to change marker size
                 },
-                'lineColor': '#606063',
-                'lineWidth': 2,
-                'fillOpacity': 0.3  # Transparency of the filled area under the line
+                'line': {
+                    'dashStyle': 'Solid'
+                },
+                'fillColor': {
+                    'linearGradient': { 'x1': 0, 'y1': 0, 'x2': 0, 'y2': 1 },
+                    'stops': [
+                        [0, '#6CCAFF'],  # Gradient starts with CatDesign blue
+                        [1, 'rgba(0,0,0,0)']  # Gradient to transparent
+                    ]
+                },
+                'fillOpacity': 0.5  # Transparency of the filled area
             }
         },
-        'series': [{'name': f'Series {i+1}', 'data': datum, 'color': color_chart_scheme[i]} for i, datum in enumerate(data)]
+        'series': [{'name': f'Series {i+1}', 'data': datum, 'color': color_chart_scheme[0]} for i, datum in enumerate(data)]
     }
 
-    with box(ui, color_scheme=color_scheme, css=f'height: 400px; width: 100%;' + css, tailwind=tailwind):
+    with box(ui, color_scheme=color_scheme, css=f'' + css, tailwind=tailwind):
         ui.chart(chart_options)

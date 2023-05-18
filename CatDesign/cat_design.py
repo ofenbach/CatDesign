@@ -32,11 +32,11 @@ class CatDesign:
         """
 
         # cat design setup
-        self.color_scheme = ColorScheme(ui)                 # init the colors
-        self.font_scheme = FontScheme(self.color_scheme)                     # init the font
+        self.color_scheme = ColorScheme(ui)                      # init the colors
+        self.font_scheme = FontScheme(self.color_scheme)         # init the font
         self.ui = ui
         self.ui.add_head_html(f'<style>{head_style}</style>')    # add basic style
-        self.ui.run()                                            # start the UI event loop
+        self.ui.run(title="CatDesign")                           # start the UI event loop
 
     def div(self, css='', tailwind=''):
         return div(self.ui, css, tailwind)
