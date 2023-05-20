@@ -19,9 +19,14 @@ from CatDesign.styles.fonts import FontScheme
 
 
 class CatDesign:
+    """
+        CatDesign is a class for creating UI components with a specific design.
+    """
 
     def __init__(self):
-        # loading basic styles
+        """
+            Initializes the CatDesign with a specific color scheme, font scheme, and UI.
+        """
         head_style = """
         @import url('https://fonts.googleapis.com/css?family=Poppins&display=swap');
         body {
@@ -31,7 +36,6 @@ class CatDesign:
         }
         """
 
-        # cat design setup
         self.color_scheme = ColorScheme(ui)                      # init the colors
         self.font_scheme = FontScheme(self.color_scheme)         # init the font
         self.ui = ui
