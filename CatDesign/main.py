@@ -152,6 +152,8 @@ def main():
 
     cat.line_chart(css='margin-top: 200px; margin-bottom: 200px; width: 80%;', tailwind='ml-16')
 
+    cat.avatar(css='width: 64px; height: 64px;')
+
 
     cat.tweet_card(profile_src='./images/cat0.png')
 

@@ -1,6 +1,6 @@
 from CatDesign.components.layout.box import box
 
-def line_chart(ui, color_scheme, data=None, labels=None, css='', tailwind=''):
+def line_chart(ui, color_scheme, data=None, labels=None, css='', tailwind='', color='blue'):
     """
     :param data: List of series for the chart. Each series should be a list of data points.
     :param labels: Labels for the x-axis of the chart.
@@ -12,7 +12,7 @@ def line_chart(ui, color_scheme, data=None, labels=None, css='', tailwind=''):
         labels = ['Label1', 'Label2', 'Label3', 'Label4', 'Label5']
 
     # Assigning a color scheme for the chart to match the CatDesign style
-    color_chart_scheme = ['#6CCAFF']  # CatDesign blue
+    color_chart_scheme = ['#64FF50']  # CatDesign blue ##64FF50
 
     # Creating the chart options
     chart_options = {
@@ -37,7 +37,7 @@ def line_chart(ui, color_scheme, data=None, labels=None, css='', tailwind=''):
                 'fillColor': {
                     'linearGradient': { 'x1': 0, 'y1': 0, 'x2': 0, 'y2': 1 },
                     'stops': [
-                        [0, '#6CCAFF'],  # Gradient starts with CatDesign blue
+                        [0, '#64FF50'],  # Gradient starts with CatDesign blue
                         [1, 'rgba(0,0,0,0)']  # Gradient to transparent
                     ]
                 },

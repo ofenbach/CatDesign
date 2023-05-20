@@ -50,6 +50,9 @@ class CatDesign:
     def divider(self, css='', tailwind=''):
         divider(self.ui)
 
+    def avatar(self, img_src='./images/cat0.png', css='', tailwind=''):
+        avatar(self.ui, img_src=img_src, css=css, tailwind=tailwind)
+
     def card(self, img_src='./images/cat_card.png', header='Header', sub_header='Subheader', css='', tailwind=''):
         card(self.ui, self.font_scheme, self.color_scheme, img_src, header, sub_header, css, tailwind)
 
@@ -110,17 +113,17 @@ class CatDesign:
             # retweet profiles
             with ui.row().classes('flex justify-between items-center w-full'):
                 with div(ui):
-                    avatar(ui, src='images/cat1.png', style='z-index: 3;')
-                    avatar(ui, src='images/cat2.png', style='margin-left: -16px; z-index: 2;')
-                    avatar(ui, src='images/cat3.png', style='margin-left: -16px; z-index: 1;')
-                    avatar(ui, src='images/cat4.png', style='margin-left: -16px; z-index: 0;')
+                    avatar(ui, img_src='images/cat1.png', css='z-index: 3;')
+                    avatar(ui, img_src='images/cat2.png', css='margin-left: -16px; z-index: 2;')
+                    avatar(ui, img_src='images/cat3.png', css='margin-left: -16px; z-index: 1;')
+                    avatar(ui, img_src='images/cat4.png', css='margin-left: -16px; z-index: 0;')
 
                 with div(ui):
                     self.typography('Retweets', variant='subtitle2', css='color: white;')
 
             # retweet
             with ui.row().classes('flex items-center mt-6'):
-                avatar(ui, src='images/cat5.png')
+                avatar(ui, img_src='images/cat5.png')
                 self.typography('Retweeter', variant='subtitle1')
 
             with ui.row().classes('mt-4'):
