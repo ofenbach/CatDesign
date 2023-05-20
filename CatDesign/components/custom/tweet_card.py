@@ -18,11 +18,11 @@ def tweet_card(ui, color_scheme, profile_src, profile_name="Profile Name", tweet
         with ui.row().classes('mt-4'):
             ui.label(tweet).classes('text-base font-light').style('color: #D9D9D9;')
 
-        # date, share, like
+        # date, share_outlined.svg, like
         with ui.row().classes('flex justify-between items-center w-full mt-4'):
             ui.label("23.03.2023").classes('text-xs font-light').style('color: #A6A6A6;')
             with div():
-                ui.icon('share').classes('mr-4 text-sm')
+                ui.icon('share_outlined.svg').classes('mr-4 text-sm')
                 ui.icon('thumb_up').classes('text-sm')
 
         # divider

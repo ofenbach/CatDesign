@@ -1,5 +1,5 @@
 
-class Colors:
+class ColorScheme:
     """
     A class to represent a dark theme color scheme for a design system.
 
