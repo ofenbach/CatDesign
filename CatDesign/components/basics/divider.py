@@ -1,4 +1,4 @@
-def divider(ui, tailwind='mt-8 mb-8', css='background-color: #26282C'):
+def divider(ui, css='background-color: #26282C', tailwind='mt-8 mb-8', ):
     """
     Creates a divider between sections.
 

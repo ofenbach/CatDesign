@@ -48,7 +48,7 @@ class CatDesign:
         return box(self.ui, self.color_scheme, css, tailwind)
 
     def divider(self, css='', tailwind=''):
-        divider(self.ui)
+        divider(self.ui, css, tailwind)
 
     def avatar(self, img_src='./images/cat0.png', css='', tailwind=''):
         avatar(self.ui, img_src=img_src, css=css, tailwind=tailwind)
