@@ -40,15 +40,15 @@ def main():
             cat.typography(text='Card', variant='h1')
         # Card 1
         with cat.div(tailwind='flex w-full justify-center mt-8'):
-            cat.card(header="Feline Facts", sub_header="Explore the fascinating world of cats.", tailwind='mr-8')
+            cat.card(header="Feline Facts", sub_header="Explore the fascinating world of cats.", tailwind='mr-0 lg:mt-0 lg:mr-8')
 
             # Card 2
             cat.card(img_src='./images/cat_card2.png', header="Purr-fect Companions",
-                     sub_header="Discover why cats make such great pets.", tailwind='mr-8')
+                     sub_header="Discover why cats make such great pets.", tailwind='mr-0 mt-8 lg:mt-0 lg:mr-8')
 
             # Card 3
             cat.card(img_src='./images/cat_card3.png', header="Cats of the World",
-                     sub_header="Learn about the various breeds of cats.", tailwind='mr-8')
+                     sub_header="Learn about the various breeds of cats.", tailwind='mr-0 mt-8 lg:mt-0 lg:mr-8')
 
         cat.divider()
 
