@@ -151,6 +151,10 @@ def main():
             cat.icon('arrow-left')
             cat.icon('arrow-right')
             cat.icon('arrow-up')
+            cat.icon('arrow-up-left')
+            cat.icon('arrow-up-right')
+            cat.icon('arrow-down-left')
+            cat.icon('arrow-down-right')
 
 
         cat.divider()
