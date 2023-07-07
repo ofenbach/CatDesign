@@ -12,6 +12,7 @@ Here are some of the components already developed and ready for use in CatDesign
 <img width="1660" alt="Bildschirmfoto 2023-05-13 um 14 17 11" src="https://github.com/ofenbach/CatDesign/assets/29439003/7d0ef1c5-a302-4b94-ae40-0fe5d2e8bda8">
 <img width="350" alt="Bildschirmfoto 2023-05-13 um 14 17 06" src="https://github.com/ofenbach/CatDesign/assets/29439003/660fcd5d-5627-4345-89fb-e3f7e7029d3a">
 <img width="273" alt="Bildschirmfoto 2023-05-13 um 14 17 02" src="https://github.com/ofenbach/CatDesign/assets/29439003/893d44fa-6faf-49c7-aed2-7d3353965b41">
+<img width="1624" alt="Bildschirmfoto 2023-07-07 um 10 46 09" src="https://github.com/ofenbach/CatDesign/assets/29439003/c2b853b3-b6a1-451c-8ae0-16f2ea541edf">
 
 
 ## Features
