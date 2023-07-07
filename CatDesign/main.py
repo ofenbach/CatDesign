@@ -159,6 +159,11 @@ def main():
 
         cat.divider()
 
+        with cat.div(tailwind='flex w-full justify-center mt-8'):
+            cat.review_card(reviewer_name='Whiskers', review_date='July 7, 2023',
+                            review_text='Purrfect product! My human got this for me and I absolutely love it. I give it five paws!',
+                            review_rating=5, reviewer_avatar="./images/cat0.png")
+
     cat.bar_chart()
 
     cat.line_chart(css='margin-top: 200px; margin-bottom: 200px; width: 80%;', tailwind='ml-16')

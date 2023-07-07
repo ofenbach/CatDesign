@@ -141,3 +141,19 @@ class CatDesign:
 
     def line_chart(self, data=None, labels=None, css='', tailwind=''):
         line_chart(self.ui, self.color_scheme, data, labels, css, tailwind)
+
+    def review_card(self, reviewer_name='Anonymous', review_date='Unknown date', review_text='No review text',
+                    review_rating=0, reviewer_avatar=None, css='', tailwind=''):
+        with box(self.ui, self.color_scheme,
+                 css=f'background-color: {self.color_scheme.color_box}; border: 1px solid {self.color_scheme.color_border};'
+                     f'box-shadow: none; color: white; padding: 32px; border-radius: 8px;'):
+            with self.ui.row().classes('items-center'):
+                if reviewer_avatar:
+                    avatar(self.ui, img_src=reviewer_avatar, css='width: 64px; height: 64px; margin-right: 16px;')
+                with self.ui.column():
+                    typography(self.ui, self.font_scheme, text=reviewer_name, variant='subtitle1')
+                    rating(self.ui, self.color_scheme, stars=review_rating,
+                           css='display: inline-block; margin-right: 8px;')
+            typography(self.ui, self.font_scheme, text=review_text, variant='body1', css='margin-top: 16px;')
+            typography(self.ui, self.font_scheme, text=review_date, variant='subtitle2',
+                       css='margin-top: 16px; color: #A6A6A6;')
