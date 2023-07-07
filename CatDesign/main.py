@@ -97,9 +97,9 @@ def main():
             cat.typography(text="An alert displays a short, important message in a way that attracts the user's attention without interrupting the user's task.",
                            variant='body1')
         with cat.div(tailwind='flex flex-wrap w-full justify-between mt-8'):
-            cat.alert(type='info', message='This is an info alert — check it out!')
-            cat.alert(type='warning', message='This is a warning alert — check it out!')
-            cat.alert(type='error', message='Please enter correct e-mail')
+            cat.alert(type='info', message='This is an info alert — check it out!', css="border-radius: 100px;")
+            cat.alert(type='warning', message='This is a warning alert — check it out!', css="border-radius: 100px;")
+            cat.alert(type='error', message='Please enter correct e-mail', css="border-radius: 100px;")
             cat.alert(type='success',  css="border-radius: 100px;", tailwind='mr-8')        # css and tailwind works
 
         cat.divider()
@@ -145,6 +145,13 @@ def main():
             cat.icon('map')
             cat.icon('map-pin')
             cat.icon('hand-thumb-up')
+
+        with cat.div(tailwind='flex justify-between w-full mt-16 mb-16'):
+            cat.icon('arrow-down')
+            cat.icon('arrow-left')
+            cat.icon('arrow-right')
+            cat.icon('arrow-up')
+
 
         cat.divider()
 
