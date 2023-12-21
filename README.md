@@ -36,12 +36,7 @@ Header
 Footer  
 
 ## Getting Started
-
-To get started with CatDesign, you'll need Python 3.7 or later and NiceGUI installed. Install CatDesign using pip:
-
-```bash
-pip install catdesign
-```
+Take a look at the main.py for instructions.
 
 Here's an example of how to use CatDesign to create a card:
 ```python
