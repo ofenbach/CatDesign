@@ -1,4 +1,4 @@
-from CatDesign.components.layout.box import box
+from components.layout.box import box
 
 def bar_chart(ui, color_scheme, data=None, labels=None, css='', tailwind=''):
     """
@@ -31,4 +31,4 @@ def bar_chart(ui, color_scheme, data=None, labels=None, css='', tailwind=''):
     }
 
     with box(ui, color_scheme=color_scheme, css=f'height: 400px; width: 100%;' + css, tailwind=tailwind):
-        ui.chart(chart_options)
+        ui.echart(chart_options)

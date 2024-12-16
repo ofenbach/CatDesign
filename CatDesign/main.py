@@ -1,7 +1,7 @@
 from nicegui import app
 from pathlib import Path
 
-from CatDesign.cat_design import CatDesign
+from cat_design import CatDesign
 
 folder = Path(__file__).resolve().parent / 'images'
 app.add_static_files('/images', folder)  # serve all files in this folder

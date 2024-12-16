@@ -2,20 +2,21 @@ import os
 
 from nicegui import ui
 
-from CatDesign.components.basics.avatar import avatar
-from CatDesign.components.basics.chip import chip
-from CatDesign.components.basics.divider import divider
-from CatDesign.components.basics.rating import rating
-from CatDesign.components.basics.typography import typography
-from CatDesign.components.custom.card import card
-from CatDesign.components.custom.bar_chart import bar_chart
-from CatDesign.components.custom.line_chart import line_chart
-from CatDesign.components.custom.notification import notification
-from CatDesign.components.feedback.alert import alert
-from CatDesign.components.layout.box import box
-from CatDesign.components.layout.div import div
-from CatDesign.styles.colors import ColorScheme
-from CatDesign.styles.fonts import FontScheme
+from components.basics.avatar import avatar
+
+from components.basics.chip import chip
+from components.basics.divider import divider
+from components.basics.rating import rating
+from components.basics.typography import typography
+from components.custom.card import card
+from components.custom.bar_chart import bar_chart
+from components.custom.line_chart import line_chart
+from components.custom.notification import notification
+from components.feedback.alert import alert
+from components.layout.box import box
+from components.layout.div import div
+from styles.colors import ColorScheme
+from styles.fonts import FontScheme
 
 
 class CatDesign:

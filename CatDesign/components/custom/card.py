@@ -1,6 +1,6 @@
-from CatDesign.components.basics.divider import divider
-from CatDesign.components.basics.typography import typography
-from CatDesign.components.layout.div import div
+from components.basics.divider import divider
+from components.basics.typography import typography
+from components.layout.div import div
 
 
 def card(ui, font_scheme, color_scheme, img_src="", header="Heading", sub_header="Subheading", css="", tailwind=""):

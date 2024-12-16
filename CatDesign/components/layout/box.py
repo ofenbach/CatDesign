@@ -1,4 +1,4 @@
-from CatDesign.components.layout.div import div
+from components.layout.div import div
 
 
 def box(ui, color_scheme, css='', tailwind=''):

@@ -1,4 +1,4 @@
-from CatDesign.components.layout.div import div
+from components.layout.div import div
 
 
 def alert(ui, type="success", message="Operation successful!", css='', tailwind=''):

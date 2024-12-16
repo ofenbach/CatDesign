@@ -1,4 +1,4 @@
-from CatDesign.components.layout.box import box
+from components.layout.box import box
 
 def line_chart(ui, color_scheme, data=None, labels=None, css='', tailwind='', color='blue'):
     """
@@ -48,4 +48,4 @@ def line_chart(ui, color_scheme, data=None, labels=None, css='', tailwind='', co
     }
 
     with box(ui, color_scheme=color_scheme, css=f'' + css, tailwind=tailwind):
-        ui.chart(chart_options)
+        ui.echart(chart_options)

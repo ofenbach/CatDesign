@@ -1,5 +1,5 @@
-from CatDesign.components.basics.typography import typography
-from CatDesign.components.layout.div import div
+from components.basics.typography import typography
+from components.layout.div import div
 
 
 def notification(ui, font_scheme, color_scheme, header, subheader, css='', tailwind='', color="#6CCAFF"):
