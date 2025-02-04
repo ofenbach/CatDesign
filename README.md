@@ -50,3 +50,6 @@ CatDesign is under the MIT license. See the LICENSE file for more details.
 ## NiceGUI
 CatDesign is a design system tailored for NiceGUI, a web UI framework using Python.
 To learn more about NiceGUI and its capabilities, visit its [GitHub Repository](https://github.com/zauberzeug/nicegui).
+
+## Other stuff
+Check out my latest project: https://online-image-optimizer.com/
