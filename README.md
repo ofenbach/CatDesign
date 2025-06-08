@@ -1,6 +1,5 @@
 # CatDesign: A Design System for NiceGUI
 CatDesign is a comprehensive design system built on top of the innovative Python UI framework, NiceGUI. It offers a set of pre-styled components and features that are readily usable, allowing you to build visually appealing and consistent interfaces swiftly.  
-NEW UI UPDATE COMING SOON (maybe February 2025). Compatible with new NiceGUI Version and improved more modern UI design system.
 
 ## Look and feel
 Here are some of the components already developed and ready for use in CatDesign:
@@ -52,4 +51,6 @@ CatDesign is a design system tailored for NiceGUI, a web UI framework using Pyth
 To learn more about NiceGUI and its capabilities, visit its [GitHub Repository](https://github.com/zauberzeug/nicegui).
 
 ## Other stuff
-Check out my latest project: https://online-image-optimizer.com/
+Check out my latest project: https://picmin.com/  
+https://econow.net  
+https://binauro.com  
