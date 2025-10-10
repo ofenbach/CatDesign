@@ -51,6 +51,5 @@ CatDesign is a design system tailored for NiceGUI, a web UI framework using Pyth
 To learn more about NiceGUI and its capabilities, visit its [GitHub Repository](https://github.com/zauberzeug/nicegui).
 
 ## Other stuff
-Check out my latest project: https://picmin.com/  
-https://econow.net  
-https://binauro.com  
+Check out my latest audio mental health project which implements a few designs from catdesign:
+https://binauro.com  or https://binauro.com/ambient-noises
